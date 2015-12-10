@@ -11,10 +11,9 @@ define([
     'collections/Watchlists',
     'views/ErrorPageView',
     'models/Session',
-    'views/ModalAvatarView',
     'text!templates/User.html'
 
-], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session, ModalAvatarView, UserTemplate) {
+], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session,UserTemplate) {
     var UserView = Backbone.View.extend({
         template: _.template(UserTemplate),
         el: $(".content"),
@@ -83,9 +82,6 @@ define([
             this.me.bind('sync destroy save', function () {
                 that.render();
             });
-        },
-        modifyAvatar: function () {
-            new ModalAvatarView().show();
         },
         followUser: function () {
             var that = this;

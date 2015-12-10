@@ -913,13 +913,6 @@ a:hover {
     background-color: #464646;
 }
 
-#editAvatar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-left: 20%;
-}
-
 .containerAll {
     margin-left: 5%;
 }
