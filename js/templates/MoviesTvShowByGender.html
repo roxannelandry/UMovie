@@ -1,0 +1,16 @@
+<div id="errorDivEmptyGenre" class="glyphicon glyphicon-remove-sign"></div>
+
+<div id="containerPageMovieTvShowActor">
+    <h1 id="titlePage"><%= Gender.name %></h1>
+</div>
+
+<div id="tvShowsByGenreContainer">
+    <%if(TvShowByGender !== null){%>
+    <% _.each(TvShowByGender, function(tvShow) {%>
+    <div class="containerTvShowImg">
+        <img class="imgTvShowByGender" data-id="<%=tvShow.id%>" src="<%= tvShow.artworkUrl100 %>"/>
+    </div>
+    <% }); %>
+    <%}%>
+</div>
+</div>

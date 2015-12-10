@@ -1,0 +1,1195 @@
+html {
+    background: url("../imgs/Background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #080808;
+}
+
+body {
+    background: url("../imgs/Background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Andale Mono, monospace;
+    font-size: 18px;
+}
+
+#logo {
+    width: 119px;
+    height: 44px;
+    margin-right: 17px;
+}
+
+.dropdown-menu {
+    background: rgba(35, 35, 35, 0.87);
+    border: 1px solid #1f1f1f;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    width: 550%;
+    height: 350px;
+}
+
+.navbar-nav > li > .dropdown-menu.rightMenu {
+    width: 259%;
+    height: 125px;
+}
+
+.dropdown-menu .divider {
+    background: rgba(96, 96, 96, 0.87);
+}
+
+.dropdown-menu > li > a {
+    color: #ababab;
+}
+
+.navbar-inverse {
+    background: rgba(35, 35, 35, 0.87);
+}
+
+#searchIcon {
+    width: 23px;
+    height: 27px;
+    margin-right: 9px;
+}
+
+#inputSearch {
+    background-color: #222222;
+    font-size: small;
+    display: none;
+}
+
+#inputSearch:focus {
+    outline: none;
+    border-color: #d5d5d5;
+    box-shadow: 0 0 10px #d5d5d5;
+}
+
+#parametreIcon {
+    width: 25px;
+    height: 27px;
+}
+
+#avatarIcon {
+    width: 29px;
+    height: 27px;
+}
+
+#dropDownFilter {
+    paf-bottom: 10px;
+}
+
+#avatarIcon:hover {
+    cursor: pointer;
+}
+
+#avatarIconSmall:hover {
+    cursor: pointer;
+}
+
+.utilisateurDropdownSpace {
+    margin-left: 10%;
+    color: #8c8c8c;
+    font-size: 14px;
+}
+
+.utilisateurDropdownSpace.bottomSpace {
+    margin-bottom: 7%;
+}
+
+.containerDropdown {
+    height: 25px;
+    display: inline-block;
+}
+
+.containerDropdown.colonneDropdown {
+    width: 33%;
+    max-height: 110px;
+}
+
+.dropdownDescoverMenuFilm {
+    top: 100%;
+    left: 0;
+    float: left;
+    padding: 10px 0;
+    margin: 2px 4px 0;
+    text-align: left;
+    list-style: none;
+    font-size: 13px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-width: 130px;
+    -moz-column-width: 130px;
+
+}
+
+.dropdownDescoverMenuTvShow {
+    top: 100%;
+    left: 0;
+    float: left;
+    padding: 10px 0;
+    margin: 2px 4px 0;
+    text-align: left;
+    list-style: none;
+    font-size: 13px;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-width: 130px;
+    -moz-column-width: 130px;
+
+}
+
+.dropdownDescoverMenuBigger {
+    top: 100%;
+    left: 0;
+    float: left;
+    padding: 5px 0;
+    margin: 2px 4px 0;
+    text-align: left;
+    list-style: none;
+    font-size: 14px;
+}
+
+a {
+    color: #8c8c8c;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdownHeaderFilm {
+    height: 15%;
+
+}
+
+.dropdownHeaderTvShow {
+    height: 15%;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background: none;
+    color: #fff;
+
+}
+
+#navbarSmall {
+    display: none;
+    font-size: 11pt;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.marginUserSmall {
+    margin-left: 2%;
+    color: #8c8c8c;
+    margin-bottom: 3%;
+}
+
+@media (max-width: 767px) {
+    #navbarSmall {
+        display: block;
+    }
+
+    #browseDropdown {
+        display: none;
+    }
+
+    #navbarRight {
+        display: none;
+    }
+
+    #avatarIconSmall {
+        width: 29px;
+        height: 27px;
+    }
+}
+
+@media (min-width: 768px) {
+    #avatarIconSmall {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.carousel-control {
+    width: 2%;
+}
+
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    min-width: 100%;
+}
+
+.carousel {
+    margin: 0 1% 3% 1%;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+    max-height: 400px;
+}
+
+.icon-bar {
+    color: #8c8c8c;
+}
+
+#navbarSmall {
+    font-size: 12px;
+}
+
+.utilisateurDropdownSpace.utilisateurDropdownSpaceSmall {
+    margin-left: 2%;
+}
+
+ul.dropdown-menu {
+    width: 434%;
+}
+
+.carouselMultiple {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+.marginImgCarousel {
+    margin-right: 1%;
+}
+
+.carouselMultiple img {
+    width: 90%;
+    max-width: 95%;
+    height: 180px;
+}
+
+#titleWatchlist {
+    color: #ababab;
+    margin-left: 4%;
+    margin-bottom: 4%;
+
+}
+
+#listWatchlist {
+    color: #ababab;
+    margin-left: 5%;
+    margin-top: 5%;
+
+}
+
+.lineTableWatchlist {
+    text-align: left;
+    background-color: #313131;
+    opacity: 0.7;
+    color: whitesmoke;
+    font-size: 11pt;
+    position:relative;
+
+}
+
+.lineTableFriends {
+    text-align: left;
+    background-color: #313131;
+    opacity: 0.7;
+    color: whitesmoke;
+    font-size: 11pt;
+}
+
+.bigestOpacity {
+    background-color: #080808;
+    opacity: 0.9;
+}
+
+.linkUnderline {
+    text-decoration: underline;
+}
+
+.tableWatchlist {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+.tableFriends {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+.tableFriends td {
+    padding: 2%;
+}
+
+.tableWatchlist td {
+    padding: 2%;
+}
+
+.pencilWatchlist:hover {
+    color: white;
+}
+
+.deleteButtonWatchlist {
+    border: 0;
+    background-color: transparent;
+}
+
+.deleteButtonWatchlist:hover {
+    color: #352058;
+    cursor: pointer;
+}
+
+#titleWatchlists {
+    font-size: 28pt;
+    color: whitesmoke;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.buttonNewWatchlist {
+    margin-left: 1%;
+    opacity: 0.6;
+}
+
+.buttonInputWatchList {
+    margin-left: 7%;
+    margin-bottom: 4%;
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 2px;
+    width: 50%;
+    font-size: 12pt;
+    padding: 4px 4px 4px 4px;
+}
+
+#nomAjoutWatchliste:focus {
+    box-shadow: 0 0 9px #655DA0;
+    border-color: #655DA0;
+}
+
+@media (max-width: 440px) {
+    .buttonInputWatchList {
+        margin-left: 5%;
+    }
+}
+
+.buttonSaveWatchlist {
+    margin-right: 2%;
+    opacity: 0.6;
+}
+
+#errorBox {
+    color: crimson;
+    font-size: smaller;
+}
+
+#titleWatchlist {
+    color: #ababab;
+    margin: 3% 3% 3% 3%;
+    background-color: transparent;
+    font-size: 19pt;
+    border: 1px solid #8c8c8c;
+    box-shadow: 0 0 10px
+}
+
+#titleWatchlist:focus {
+
+}
+
+#addMovieLabelWatchlist {
+    color: #787878;
+    margin-left: 5%;
+}
+
+#inputAddMoviesWatchlist {
+    width: 250px;
+    background-color: transparent;
+    border-color: #4d4d4d;
+}
+
+.form-group {
+    margin-left: 5%;
+}
+
+@media (max-width: 767px) {
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+}
+
+#moviesContainerWatchlist {
+    margin: 5%;
+}
+
+#tvShowsByGenreContainer {
+    margin: 5%;
+}
+
+div.containerMovieDeleteButton {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    margin: 2px 3px 4px 3px;
+}
+
+div.containerTvShowImg {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    margin: 2px 3px 4px 3px;
+}
+
+.deleteCaption {
+    display: block;
+    color: #4d4d4d;
+    font-family: Andale Mono, monospace;
+    font-size: 18px;
+}
+
+.imgMovieWatchlist {
+    width: 100px;
+    height: 150px;
+}
+
+.imgTvShowByGender {
+    width: 100px;
+    height: 150px;
+}
+
+.imgTvShowByGender:hover {
+    cursor: pointer;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+table.borderSepared {
+    border-collapse: separate;
+    border-spacing: 0px 3px;
+}
+
+th, td {
+    text-align: left;
+    background-color: #313131;
+    opacity: 0.7;
+    color: whitesmoke;
+    font-size: 11pt;
+}
+
+.titleListMovieEpisode {
+    color: #bebebe;
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: 15pt;
+}
+
+.imageList {
+    width: 75px;
+    height: 100px;
+    margin-right: 3%;
+}
+
+#buttonItune {
+    display: inline-block;
+    overflow: hidden;
+    background: url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    width: 120px;
+    height: 80px;
+    margin-top: 10%;
+    margin-right: 6%;
+}
+
+.imageTvShowActorMovie {
+    width: 250px;
+    margin-top: 9%;
+    margin-left: 20%;
+    border: solid 1px black;
+}
+
+.imageBullet {
+    width: 6%;
+    display: block;
+    margin: auto;
+    cursor: pointer
+}
+
+#containerPageMovieTvShowActor {
+    padding-right: 7%;
+    color: #ababab;
+    padding-left: 1%;
+
+}
+
+.informationInterneBar {
+    display: inline-block;
+    border-right: 2px solid white;
+    padding-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .informationInterneBar {
+        display: block;
+        border: none;
+    }
+
+    #titlePage {
+        font-size: 50px;
+    }
+}
+
+.informationBar {
+    font-size: 10pt;
+}
+
+.description {
+    text-align: justify;
+    padding-top: 3%;
+    font-size: 12pt;
+}
+
+#titlePage {
+    font-size: 28pt;
+    color: whitesmoke;
+}
+
+.dropdownButton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 20%;
+    background: rgb(0, 0, 0);
+    border: 1px solid #474747;
+}
+
+.dropdownButton .dropdownButtonMenu {
+    top: 100%;
+    display: none;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.dropdownButton:hover .dropdownButtonMenu {
+    display: block;
+}
+
+.dropdownButton a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    color: #bababa;
+    cursor: pointer;
+}
+
+.informationSuplementaire {
+    padding-left: 20px;
+}
+
+.deleteButtonWatchlist:hover {
+    cursor: pointer;
+    color: #352058;
+}
+
+#ytplayer {
+    margin-top: 4%;
+}
+
+.slick-slide {
+    outline: none;
+}
+
+.image {
+    display: inline-block;
+    position: relative;
+}
+
+.plusButton {
+    font-size: 16pt;
+}
+
+.rowToHide {
+    display: none;
+}
+
+ul.widthRelative {
+    width: auto;
+}
+
+ul.widthRelative li a {
+    display: inline;
+    padding-right: 6px;
+    width: auto;
+}
+
+.pullright {
+    text-align: right;
+    padding-right: 3%;
+}
+
+#errorDivEmptyWatchlist {
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+#errorDivEmptySearch {
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+#errorMovieInWatchlist{
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+#succesMovieInWatchlist{
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #167228;
+}
+
+#succesUserFollow{
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #167228;
+}
+
+#errorUserFollow{
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+.ui-autocomplete {
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 11pt;
+    color: #ababab;
+    list-style-type: none;
+    cursor: pointer;
+    background: rgba(35, 35, 35, 0.87);
+    border: 1px solid #1f1f1f;
+
+}
+
+.input-group {
+    margin: 3%;
+    color: white;
+    width: 96%;
+    font-size: 10pt;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.shadowPurple:focus {
+    box-shadow: 0 0 10px #655d88;
+}
+
+.form-control {
+    background-color: #464646;
+    border-color: #464646;
+    color: #777777;
+    font-size: 13pt;
+}
+
+.form-control:focus {
+    border-color: #464646
+}
+
+@media (min-width: 1000px) {
+    #loginForm {
+        width: 400px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@media (max-width: 1000px) {
+    #loginForm {
+        width: 70%;
+        margin: auto auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@media (min-width: 1000px) {
+    #aboutForm {
+        width: 700px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@media (max-width: 1000px) {
+    #aboutForm {
+        width: 70%;
+        margin: auto auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+#loginLogo {
+    width: 90%;
+    margin-bottom: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.loginButtonDiv {
+    width: 96%;
+}
+
+#loginButton {
+    width: 100%;
+    font-size: 13pt;
+}
+
+#joinUs {
+    font-size: 10pt;
+    margin: 2%;
+    color: white;
+}
+
+.btn-primary {
+    border: none;
+    font-family: Andale Mono, monospace;
+    background-color: #312b43;
+}
+
+.btn-primary:active:focus {
+    border: none;
+    font-family: Andale Mono, monospace;
+    background-color: #312b43;
+}
+
+.btn-primary:hover {
+    background-color: #3c3556;
+}
+
+.linkColor:hover {
+    color: #3c3556;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#autorisationCookies {
+    font-size: 8pt;
+    margin: 4%;
+    color: #a3a3a3;
+}
+
+#linkColorSignUp {
+    color: #5e5389;
+}
+
+#cancelButton {
+    background-color: #464646;
+    width: 100%;
+}
+
+#signUpButton {
+    width: 100%;
+}
+
+.utilisateurDropdownSpace {
+    display: inline-flex;
+}
+
+.watchlistsUser {
+    font-size: 14pt;
+    color: whitesmoke;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#listWatchlistUser {
+    color: #ababab;
+    margin-left: 5%;
+}
+
+#listContainer {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#watchlistUser, #friendsUser {
+    float: left;
+    color: white;
+}
+
+#watchlistUser {
+    width: 50%;
+}
+
+#friendsUser {
+    width: 50%;
+}
+
+#imageAvatar {
+    width: 180px;
+    margin-top: 9%;
+    margin-left: 20%;
+    border: solid 1px black;
+}
+
+.followButton {
+    margin-top: 4%;
+    width: 110px;
+    font-size: 10pt;
+}
+
+.unfollowButton {
+    margin-top: 4%;
+    width: 110px;
+    font-size: 10pt;
+}
+
+.unfollow {
+    background-color: #464646;
+}
+
+#editAvatar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 20%;
+}
+
+.containerAll {
+    margin-left: 5%;
+}
+
+#emailUser {
+    color: #a0a0a0;
+    margin-top: 2%;
+}
+
+#unfollowButton {
+    background-color: #464646;
+}
+
+.deleteButtonFollow {
+    border: 0;
+    background-color: transparent;
+}
+
+.deleteButtonFollow:hover {
+    color: #352058;
+    cursor: pointer;
+}
+
+.friendsUser {
+    font-size: 14pt;
+    color: whitesmoke;
+    margin-left: 7%;
+    margin-bottom: 2%;
+}
+
+#errorPage {
+    margin-left: 3%;
+    color: #959595;
+}
+
+.buttonMarginTop {
+    margin-top: 3%;
+}
+
+.searchBox {
+    margin-left: 7%;
+    margin-bottom: 0%;
+    margin-top: 1%;
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 2px;
+    width: 40%;
+    font-size: 12pt;
+    padding: 4px 4px 4px 4px;
+}
+
+#nameSearch:focus {
+    box-shadow: 0 0 9px #655DA0;
+    border-color: #655DA0;
+}
+
+.dropdownSearch {
+    background: rgba(35, 35, 35, 0.87);
+    border: 1px solid #1f1f1f;
+
+}
+
+.lineDropdownSearch {
+    background: rgba(35, 35, 35, 0.87);
+}
+
+.imageLine {
+    margin-right: 3%;
+}
+
+.buttonAddWatchlistSearch {
+    background: rgba(35, 35, 35, 0.87);
+    border: 1px solid #1f1f1f;
+    color: whitesmoke;
+}
+
+.blackBackgound {
+    background-color: #0f0f0f;
+}
+
+#errorImg {
+    width: 90px;
+}
+
+#buttonBackHome {
+    opacity: 0.6;
+    margin-right: 4%;
+}
+
+#buttonBackSignUp {
+    opacity: 0.6;
+    margin-right: 4%;
+}
+
+.containerErrorImg {
+    margin-left: 4%;
+    margin-top: 4%;
+}
+
+.containerErrorImg img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 3%;
+}
+
+.containerErrorImg h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+}
+
+#errorLogin {
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+#errorSignUp {
+    display: none;
+    height: 45pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #9f1863;
+}
+
+#dataPolicyText {
+    font-size: 10pt;
+    color: #a3a3a3;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    text-align: justify;
+}
+
+.whiter {
+    color: whitesmoke;
+}
+
+#mainTitle {
+    text-align: center;
+    font-size: 14pt;
+}
+
+.tabs {
+    margin-left: 2%;
+}
+
+#aboutLogo {
+    width: 60%;
+    margin-bottom: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#copyrigth {
+    font-size: 10pt;
+}
+
+#aboutText {
+    font-size: 10pt;
+    color: #a3a3a3;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    text-align: justify;
+}
+
+#popUp {
+    margin-top: 2%;
+    position: absolute;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 20px;
+    border-radius: 10px;
+    background: url("../imgs/Background.png") no-repeat center center fixed;
+    border: 1px solid grey;
+    color: whitesmoke;
+
+}
+
+#closePopUp {
+
+    border: 0;
+    background-color: transparent;
+    color: #bababa;
+}
+
+#episodeName {
+
+    font-size: 14pt;
+    color: whitesmoke;
+}
+
+.descriptionModal {
+    font-family: Andale Mono, monospace;
+    color: #ababab;
+    margin-bottom: 5%;
+}
+
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    min-width: 100%;
+}
+
+.carousel {
+    margin: 0 1% 3% 1%;
+}
+
+.carouselMultiple img {
+    max-width: 95%;
+}
+
+.carouselMultiple {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+.marginImgCarousel {
+    margin-right: 1%;
+}
+
+.carouselMultiple img {
+    width: 90%;
+    height: 160px;
+}
+
+@media (max-width: 320px) {
+    .slick-list {
+        padding-left: 60px;
+    }
+}
+
+#errorDivEmptyGenre {
+    display: none;
+    height: 30pt;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 12px;
+    padding-left: 10px;
+    color: #ab1a68;
+}
+
+.greyColor {
+    color: #8c8c8c;
+}
+
+#advancedSearch{
+    font-size: 9pt;
+}
+
+#boxGender{
+    margin: 3% 4% 3% 5%;
+    border: solid 1px #1f1f1f;
+    padding: 1% 1% 1% 1%;
+    background-color: #1D1C1C;
+    opacity: 0.7;
+    font-size: 10pt;
+    color: #808080;
+}
+
+.ui-helper-hidden-accessible{
+    display:none;
+}
+
+#buttonContainer{
+    padding: 1% 1% 0% 0%;
+}
+
+

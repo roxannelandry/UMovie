@@ -1,0 +1,34 @@
+<div id="containerPageMovieTvShowActor">
+    <div id="errorDivEmptyWatchlist" class="glyphicon glyphicon-remove-sign"></div>
+    <h2 id="titleWatchlists">Watchlists</h2>
+    <input type="text" class="buttonInputWatchList" id="nomAjoutWatchliste" placeholder="Watchlist name"/>
+    <a class="btn btn-default  buttonNewWatchlist" role="button">Add Watchlist</a>
+    <table id="listWatchlist" class="borderSepared tableWatchlist linkUnderline">
+        <% var count = 0;
+        _.each(Watchlists, function(watchlist) {%>
+        <tr class="bigestOpacity lineTableWatchlist">
+            <% if(count % 2 == 0){ %>
+            <td class="watchlistName lineTableWatchlist">
+                <%= watchlist.name %>
+            <td class="lineTableWatchlist">
+                <button class="glyphicon glyphicon-remove  deleteButtonWatchlist pull-right"
+                        data-id="<%= watchlist.id%>"></button>
+                <a class="btn pull-right glyphicon glyphicon-pencil pencilWatchlist"
+                   href="#/watchlist/<%=watchlist.id %>"/></td>
+        </tr>
+        <% }else{%>
+        <tr class="lineTableWatchlist">
+            <td class="watchlistName lineTableWatchlist">
+                <%= watchlist.name %>
+            </td>
+            <td class="lineTableWatchlist">
+                <button class="glyphicon glyphicon-remove deleteButtonWatchlist pull-right"
+                        data-id="<%= watchlist.id%>"></button>
+                <a class="btn pull-right glyphicon glyphicon-pencil pencilWatchlist"
+                   href="#/watchlist/<%= watchlist.id %>"/></td>
+            <% } %>
+        </tr>
+        <% count++}); %>
+    </table>
+
+</div>

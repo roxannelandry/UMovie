@@ -1,0 +1,25 @@
+<div id="popUp">
+    <button type="button" id="closePopUp" class="glyphicon glyphicon-remove pull-right" data-dismiss="modal"></button>
+
+
+    <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12">
+        <img class="image" src='<%= EpisodeTvShow.artworkUrl250%>'>
+    </div>
+    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+        <h1 id="titlePage">
+            <%= EpisodeTvShow.collectionName%>
+        </h1>
+
+        <div id="informationBar">
+            <div id="episodeName"><%=EpisodeTvShow.trackNumber%>.<%=
+                EpisodeTvShow.trackName%> (<%= EpisodeTvShow.trackTimeMillis%>)
+            </div>
+            <div class="description descriptionModal"><%= EpisodeTvShow.longDescription%></div>
+        </div>
+
+        <iframe id="ytplayerModal" width="450" height="290"
+                src="http://www.youtube.com/embed?listType=search&list=<%= EpisodeTvShow.collectionName%> + <%= EpisodeTvShow.trackName%>+'trailer''&iv_load_policy=3'"
+                allowfullscreen></iframe>
+
+    </div>
+</div>

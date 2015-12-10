@@ -1,0 +1,83 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button id="buttonBurger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/home"><img id="logo" src="./imgs/Logo.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" id="browseDropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Browse <span class="caret"></span></a>
+                    <ul class="dropdown-menu backgroundTransparent">
+                        <div class="containerDropdown">
+                            <div class="containerDropdown colonneDropdownTvShow">
+                                <div class="dropdownHeaderTvShow"><a>Tv Shows</a></div>
+
+                                <ul class="dropdownDescoverMenuTvShow">
+                                    <%_.each(ListeGenreTvShowInfo, function(info) {%>
+                                    <li><a href="#/tvshowbygenre/<%= info.id %>"><%=info.name%></a></li>
+                                    <%});%>
+                                </ul>
+
+                            </div>
+                            <div class="containerDropdown colonneDropdownFilm">
+                                <div class="dropdownHeaderFilm"><a>Movies</a></div>
+
+                                <ul class="dropdownDescoverMenuFilm">
+                                    <%_.each(ListeGenreFilmInfo, function(info) {%>
+                                    <li><a href="#/moviesbygenre/<%= info.id %>"><%=info.name%></a></li>
+                                    <%});%>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="#/watchlists">
+                    <small>Watchlists</small>
+                </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="navbarRight">
+                <li><a><img onclick="afficherSearch('inputSearch')" id="searchIcon"
+                            src="./imgs/SearchIcone.png"><input id="inputSearch" type="search"
+                                                                placeholder="Search" style="display: none"
+                                                                onblur="afficherSearch('inputSearch')"
+                                                                onkeypress="return goToRechercheURL(event)"></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img id="avatarIcon" src="./imgs/AvatarIcone.png"> <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu rightMenu">
+                        <li class="utilisateurDropdownSpace bottomSpace"><img id="avatarIcon"
+                                                                              src="./imgs/AvatarIcone.png"><a
+                                id="userName" href="#/users/<%=User.id%>"> <%= User.name %></a>
+                        </li>
+                        <li><a class="buttonLogOut">Log out</a></li>
+                        <li class="divider"></li>
+                        <li><a class="buttonAbout">About</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="navbarSmall">
+                <li class="marginUserSmall"><img id="avatarIconSmall" src="./imgs/AvatarIcone.png"><a
+                        href="#/users/<%=User.id%>"> <%= User.name %> </a></li>
+                <li><a class="buttonLogOut">Log out</a></li>
+                <li><a class="buttonAbout">About</a></li>
+                <% var queryString = "1zzzzzz1";%>
+                <li><a href="#/search?q=<%=queryString%>&limit=15">Search</a></li>
+                <li><a href="#/watchlists">Watchlist</a></li>
+                <li><a href="#/tvshow/766693163">Tv Shows</a></li>
+                <li><a href="#/movies/285825306">Movies</a></li>
+                <li><a href="#/actor/272994458">Actors</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,21 @@
+<div id="currentUser">
+    <div id="errorDivEmptyWatchlist" class="glyphicon glyphicon-remove-sign"></div>
+
+    <input id="titleWatchlist" value="<%= Watchlist.name%>"/>
+
+
+    <div id="moviesContainerWatchlist">
+        <%if(Movies !== null){%>
+        <% _.each(Movies, function(movie) {%>
+        <div class="containerMovieDeleteButton">
+            <img class="imgMovieWatchlist" src="<%= movie.artworkUrl100 %>"/>
+            <span class="deleteCaption"><a class="glyphicon glyphicon-remove deleteButtonMovies spaceDeleteButton"
+                                           data-id="<%= movie.trackId%>">Delete</a></span>
+        </div>
+        <% }); %>
+        <input id="watchlistId" type="hidden" name="id" value="<%= Watchlist.id %>"/>
+        <%}%>
+    </div>
+
+    <a class="btn btn-default pull-right buttonSaveWatchlist" role="button">Save</a>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-lg-3 col-md-5 col-sm-5 col-xs-12">
+    <div class="image">
+        <img class="imageTvShowActorMovie" src='<%= SaisonInfo.artworkUrl350%>'/>
+    </div>
+</div>
+<div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+    <div id="containerPageMovieTvShowActor">
+        <h1 id="titlePage">
+            <%= SaisonInfo.collectionName%>
+        </h1>
+
+        <div class="informationBar">
+            <div class="informationInterneBar"><%= SaisonInfo.contentAdvisoryRating%></div>
+            <div class="informationInterneBar informationSuplementaire"><%= SaisonInfo.primaryGenreName%>
+            </div>
+            <div class="informationInterneBar informationSuplementaire"><%=
+                SaisonInfo.releaseDate%>
+            </div>
+            <div class="description"><%= SaisonInfo.longDescription%></div>
+        </div>
+
+        <iframe id="ytplayer" type="text/html" width="460" height="290"
+                src="http://www.youtube.com/embed?listType=search&list=<%= SaisonInfo.collectionName%>+'trailer''&iv_load_policy=3'"
+                allowfullscreen></iframe>
+
+
+        <a class="pull-right" id="buttonItune" href="<%= SaisonInfo.collectionViewUrl%>"></a>
+    </div>
+</div>

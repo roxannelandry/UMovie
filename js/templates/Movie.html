@@ -1,0 +1,48 @@
+<div id="errorMovieInWatchlist" class="glyphicon glyphicon-remove-sign"></div>
+<div id="succesMovieInWatchlist" class="glyphicon glyphicon-ok-sign"></div>
+<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 image">
+    <div class="image">
+        <img class="imageTvShowActorMovie" src='<%= MovieInfo.artworkUrl350%>'>
+        </img>
+        <div class="btn-group dropdownButton">
+            <a class="btn dropdown-toggle plusButton" data-toggle="dropdown" href="#">+</a>
+            <ul class="dropdown-menu widthRelative">
+                <%var count=0;%>
+                <%_.each(Watchlists, function(watchlist) {%>
+                <li><a class="watchlistDropdownMenu" id="<%= count%>"
+                       data-id="<%= watchlist.id %>"><%=watchlist.name%></a></li>
+                <% count++});%>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+    <div id="containerPageMovieTvShowActor">
+
+        <h1 id="titlePage">
+            <%= MovieInfo.trackCensoredName%>
+        </h1>
+
+        <div class="informationBar">
+            <div class="informationInterneBar"><%= MovieInfo.contentAdvisoryRating%></div>
+            <div class="informationInterneBar informationSuplementaire"><%= MovieInfo.primaryGenreName%></div>
+            <div class="informationInterneBar informationSuplementaire"><%= MovieInfo.time%>
+            </div>
+            <div class="informationInterneBar informationSuplementaire"><%= MovieInfo.releaseDate%></div>
+        </div>
+
+        <p class="description">
+            <%= MovieInfo.longDescription%>
+        </p>
+
+        <iframe id="ytplayer" width="460" height="290"
+                src="http://www.youtube.com/embed?listType=search&list=<%= MovieInfo.trackCensoredName%>+'trailer''&iv_load_policy=3'"
+                allowfullscreen></iframe>
+
+        <a class="pull-right" id="buttonItune" href="<%= MovieInfo.trackViewUrl%>"></a>
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,23 @@
+<div class="col-lg-3 col-md-5 col-sm-5 col-xs-12">
+    <img class="imageTvShowActorMovie" src="<%=ActorInfo.imageUrl%>"/>
+</div>
+
+<div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+    <div id="containerPageMovieTvShowActor">
+        <h1 id="titlePage">
+            <%= ActorInfo.artistName%>
+        </h1>
+
+        <div id="informationBar">
+            <div class="informationInterneBar"><%= ActorInfo.primaryGenreName%></div>
+            <div class="informationInterneBar informationSuplementaire"><%= ActorInfo.artistType%></div>
+        </div>
+
+
+        <a class="pull-right" id="buttonItune" href="<%= ActorInfo.artistLinkUrl%>"></a>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,72 @@
+<div id="succesUserFollow" class="glyphicon glyphicon-ok-sign"></div>
+<div id="errorUserFollow" class="glyphicon glyphicon-remove-sign"></div>
+<div id="containerAll">
+    <div class="col-lg-3 col-md-4 col-sm-5 col-xs-">
+        <div class="image">
+            <img id="imageAvatar" src="./imgs/AvatarIcone.png"/>
+            <div id="editAvatar">
+                <a id="pencilAvatar" class="btn  glyphicon glyphicon-pencil" data-toggle="dropdown"></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+        <h1 id="titlePage"> <%= User.name %></h1>
+        <h4 id="emailUser"> <%= User.email %></h4>
+        <input class="btn followButton btn-primary btn-lg gradient" value="Follow"/>
+    </div>
+
+    <div id="listContainer" class="col-lg-9 col-md-7 col-sm-7 col-xs-12">
+        <div id="friendsUser">
+            <h2 class="friendsUser">Friends</h2>
+            <table id="listFriendsUser" class="borderSepared tableFriends linkUnderline">
+                <% var count = 0;
+                _.each(Followers, function(follow) {%>
+                <tr class="bigestOpacity lineTableFriends">
+                    <% if(count % 2 == 0){%>
+                    <td class="lineTableFriends greyColor"><%= follow.attributes.name %></td>
+                    <td class="lineTableFriends">
+                        <button class="btn btn-primary gradient unfollow pull-right"
+                                data-id="<%= follow.attributes._id%>">Unfollow
+                        </button>
+                </tr>
+                <% }else{%>
+                <tr class="lineTableFriends">
+                    <td class="lineTableFriends greyColor"><%= follow.attributes.name %></td>
+                    <td class="lineTableFriends">
+                        <button class="btn btn-primary gradient unfollow pull-right"
+                                data-id="<%= follow.attributes._id%>">Unfollow
+                        </button>
+                        <% } %>
+                </tr>
+                <% count++}); %>
+            </table>
+        </div>
+        <div id="watchlistUser">
+            <h2 class="watchlistsUser">Watchlists</h2>
+            <table id="listWatchlistUser" class="borderSepared tableWatchlist linkUnderline">
+                <% var count = 0;
+                _.each(WatchlistUser, function(watchlist) {%>
+                <tr class="bigestOpacity lineTableWatchlist">
+                    <% if(count % 2 == 0){ %>
+                    <td class="lineTableWatchlist"><a href="#/watchlist/<%= watchlist.id %>">
+                        <%= watchlist.name %>
+                    </a>
+                    <td class="lineTableWatchlist">
+                        <button class="glyphicon glyphicon-remove deleteButtonWatchlist pull-right"
+                                data-id="<%= watchlist.id%>"></button>
+                </tr>
+                <% }else{%>
+                <tr class="lineTableWatchlist">
+                    <td class="lineTableWatchlist"><a href="#/watchlist/<%= watchlist.id %>">
+                        <%= watchlist.name %>
+                    </a></td>
+                    <td class="lineTableWatchlist">
+                        <button class="glyphicon glyphicon-remove deleteButtonWatchlist pull-right"
+                                data-id="<%= watchlist.id%>"></button>
+                        <% } %>
+                </tr>
+                <% count++}); %>
+            </table>
+        </div>
+    </div>
+</div>

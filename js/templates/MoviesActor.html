@@ -1,0 +1,43 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <h3 class="titleListMovieEpisode">List of movies</h3>
+    <table id="listMovie" class="borderSepared">
+        <% var count = 0;
+        _.each(ListeFilmActorInfo, function(info) {%>
+        <%if (count >= 10){%>
+        <%if (count %2 ==0){%>
+        <tr class="bigestOpacity" id="<%=count%>" style="display: none">
+            <td><img class="imageList" src='<%= info.artworkUrl100%>'><a class="linkUnderline"
+                                                                         data-id="<%=info.trackId %>"><%=info.trackName%></a>
+            </td>
+            <td class="pullright"><%= info.releaseDate.substr(0,10) %></td>
+        </tr>
+        <%}else {%>
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
+                                                                         data-id="<%=info.trackId %>"><%=info.trackName%></a>
+            </td>
+            <td class="pullright"><%= info.releaseDate %></td>
+        </tr>
+        <%};
+        }else
+        if (count %2 ==0){%>
+        <tr class="bigestOpacity" id="<%=count%>">
+            <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
+                                                                         data-id="<%=info.trackId %>"><%=info.trackName%></a>
+            </td>
+            <td class="pullright"><%= info.releaseDate %></td>
+        </tr>
+        <%}else {%>
+        <tr id="<%=count%>">
+            <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
+                                                                         data-id="<%=info.trackId %>"><%=info.trackName%></a>
+            </td>
+            <td class="pullright"><%= info.releaseDate %></td>
+        </tr>
+        <%};
+        count ++
+        });%>
+    </table>
+    <div><img class="imageBullet" src="./imgs/Plusbullet.png" onclick="AddMovieRow(<%=count%>)"/></div>
+
+</div>
