@@ -23,7 +23,7 @@
                 _.each(Followers, function(follow) {%>
                 <tr class="bigestOpacity lineTableFriends">
                     <% if(count % 2 == 0){%>
-                    <td class="lineTableFriends greyColor"><%= follow.attributes.name %></td>
+                    <td class="lineTableFriends greyColor"><a class="followerShow" data-id="<%=follow.id%>"><%= follow.attributes.name %></a></td>
                     <td class="lineTableFriends">
                         <button class="btn btn-primary gradient unfollow pull-right"
                                 data-id="<%= follow.attributes._id%>">Unfollow
@@ -31,7 +31,7 @@
                 </tr>
                 <% }else{%>
                 <tr class="lineTableFriends">
-                    <td class="lineTableFriends greyColor"><%= follow.attributes.name %></td>
+                    <td class="lineTableFriends greyColor"><a class="followerShow" data-id="<%=follow.id%>"><%= follow.attributes.name %></a></td>
                     <td class="lineTableFriends">
                         <button class="btn btn-primary gradient unfollow pull-right"
                                 data-id="<%= follow.attributes._id%>">Unfollow

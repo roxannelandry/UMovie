@@ -27,21 +27,23 @@ define([
             var name = $('#nameInput').val();
             var email = $('#emailInput').val();
             var password = $('#passwordInput').val();
-            var userInfo = {"name": name, "email": email, "password": password};
-            var signUp = new SignUp();
-            signUp.save(userInfo, {
-                success: function () {
-                    window.location.href = "#/";
-                },
-                error: function (model, response) {
-                    if (response.status == 500) {
-                        $('#errorSignUp').html(" This account already exist.").fadeIn('fast').delay(5000).fadeOut('slow');
-                    }else{
-                        var errorPage = new ErrorPageView();
-                        errorPage.render(response.status);
+            if(signUpInformationValid(name) && signUpInformationValid(email) && signUpInformationValid(password)){
+                var userInfo = {"name": name, "email": email, "password": password};
+                var signUp = new SignUp();
+                signUp.save(userInfo, {
+                    success: function () {
+                        window.location.href = "#/";
+                    },
+                    error: function (model, response) {
+                        if (response.status == 500) {
+                            $('#errorSignUp').html(" This account already exist.").fadeIn('fast').delay(5000).fadeOut('slow');
+                        }else{
+                            var errorPage = new ErrorPageView();
+                            errorPage.render(response.status);
+                        }
                     }
-                }
-            });
+                });
+            }
         },
         cancel: function () {
             window.location.href = "#/";

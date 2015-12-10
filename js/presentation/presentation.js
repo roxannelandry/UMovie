@@ -39,6 +39,24 @@ function inputIsValidSearch(input) {
     return true;
 }
 
+function signUpInformationValid(name){
+    if (!name) {
+        $('#errorSignUp').html(" Some login information are empty? That's sad!").fadeIn('fast').delay(5000).fadeOut('slow');
+        return false;
+    }
+    return true;
+}
+
+
+function loginInformationValid(name){
+    debugger;
+    if (!name) {
+        $('#errorLogin').html(" Some login information are empty? That's sad!").fadeIn('fast').delay(5000).fadeOut('slow');
+        return false;
+    }
+    return true;
+}
+
 function goToRechercheURL(e) {
     if (e.keyCode == 13) {
         var queryString = $("#inputSearch").val();

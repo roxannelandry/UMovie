@@ -22,7 +22,8 @@ define([
             "click #pencilAvatar": "modifyAvatar",
             "click .unfollow": "deleteFollow",
             "click .deleteButtonWatchlist": "deleteWatchlist",
-            "click .followButton": "followUser"
+            "click .followButton": "followUser",
+            "click .followerShow": "followerShow"
         },
         initialize: function (options) {
             var that = this;
@@ -87,7 +88,6 @@ define([
             new ModalAvatarView().show();
         },
         followUser: function () {
-            debugger;
             var that = this;
             var followExist = false;
             var id = {id: this.user.id};
@@ -132,6 +132,10 @@ define([
             var watchlistModel = this.watchlistUser.get(watchListId);
             watchlistModel.destroy();
             this.watchlistUser.remove();
+        },
+        followerShow: function (ev){
+            var userId = $(event.target).data('id');
+            window.location.href = "#/users/" + userId;
         },
         render: function () {
             if (this.user.attributes.followingUser != null) {
