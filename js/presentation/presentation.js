@@ -69,33 +69,30 @@ function goToRechercheURL(e) {
 }
 
 function findMovie(liste, movieId) {
+    debugger;
     var x;
-    var i = 0;
     for (x in liste) {
-        if (liste[i].trackId === movieId) {
-            return liste[i];
+        if (liste[x].trackId === movieId) {
+            return liste[x];
         }
-        i++;
     }
 }
 
 function setType(liste) {
     var x;
-    var i = 0;
     for (x in liste) {
-        if (liste[i].collectionType !== undefined) {
-            liste[i].icone = "./imgs/Tv-Show-icon.png";
-            liste[i].trackId = liste[i].collectionId;
-            liste[i].trackName = liste[i].collectionName;
-            liste[i].type = '#/tvshow/';
-        } else if (liste[i].kind !== undefined) {
-            liste[i].icone = "./imgs/Movies-icon.png";
-            liste[i].type = '#/movies/';
-            liste[i].isMovie = true;
+        if (liste[x].collectionType !== undefined) {
+            liste[x].icone = "./imgs/Tv-Show-icon.png";
+            liste[x].trackId = liste[x].collectionId;
+            liste[x].trackName = liste[x].collectionName;
+            liste[x].type = '#/tvshow/';
+        } else if (liste[x].kind !== undefined) {
+            liste[x].icone = "./imgs/Movies-icon.png";
+            liste[x].type = '#/movies/';
+            liste[x].isMovie = true;
         }else{
-            delete liste[i];
+            delete liste[x];
         }
-        i++;
     }
 }
 
@@ -118,3 +115,7 @@ function filterListe(liste,genre){
     }
 }
 
+function hideMenu(){
+    debugger;
+    $('#navbarSmall').hide();
+}

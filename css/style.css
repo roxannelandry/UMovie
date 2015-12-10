@@ -1096,6 +1096,10 @@ a:hover {
     padding: 20px;
     border-radius: 10px;
     background: url("../imgs/Background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     border: 1px solid grey;
     color: whitesmoke;
 
@@ -1189,4 +1193,8 @@ a:hover {
     padding: 1% 1% 0% 0%;
 }
 
-
+#watchlistTitle{
+    font-size: 28pt;
+    color: whitesmoke;
+    margin-left: 4%;
+}

@@ -1,6 +1,6 @@
 <div id="otherUser">
     <div id="errorDivEmptyWatchlist" class="glyphicon glyphicon-remove-sign"></div>
-    <h1><%= Watchlist.name%>"</h1>
+    <h1 id="watchlistTitle"><%= Watchlist.name%>"</h1>
     <div id="moviesContainerWatchlist">
         <%if(Movies !== null){%>
         <% _.each(Movies, function(movie) {%>
