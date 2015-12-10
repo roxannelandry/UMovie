@@ -40,9 +40,9 @@
             <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
                                                                   href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
             </td>
-
             <td>
-                <div class="btn-group pull-right" onload="check()">
+                <div class="btn-group pull-right">
+                    <%if(result.isMovie){%>
                     <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
                             data-toggle="dropdown">+
                     </button>
@@ -52,6 +52,7 @@
                         <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
                         <% });%>
                     </ul>
+                    <%};%>
                 </div>
             </td>
         </tr>
@@ -63,6 +64,8 @@
 
             <td>
                 <div class="btn-group pull-right">
+                    <%if(result.isMovie){%>
+
                     <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
                             data-toggle="dropdown">+
                     </button>
@@ -72,6 +75,7 @@
                         <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
                         <% });%>
                     </ul>
+                    <%};%>
                 </div>
             </td>
         </tr>
@@ -82,9 +86,10 @@
             <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
                                                                   href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
             </td>
-
             <td>
                 <div class="btn-group pull-right">
+                    <%if(result.isMovie){%>
+
                     <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
                             data-toggle="dropdown">+
                     </button>
@@ -94,6 +99,7 @@
                         <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
                         <% });%>
                     </ul>
+                    <%};%>
                 </div>
             </td>
         </tr>
@@ -102,9 +108,9 @@
             <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
                                                                   href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
             </td>
-
             <td>
                 <div class="btn-group pull-right">
+                    <%if(result.isMovie){%>
                     <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
                             data-toggle="dropdown">+
                     </button>
@@ -114,6 +120,7 @@
                         <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
                         <% });%>
                     </ul>
+                    <%};%>
                 </div>
             </td>
         </tr>
@@ -123,8 +130,7 @@
 
         <% var count = 0;
         _.each(searchUser, function(result) {%>
-        <%if (count >= 10){
-        %>
+        <%if (count >= 10){%>
         <%if (count %2 == 0){%>
 
         <tr data-id='<%=result.id%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
