@@ -102,35 +102,38 @@ define([
             }
         },
         deleteFollow: function (e) {
-            debugger;
-            e.preventDefault();
-            var that = this;
-            var id = $(e.currentTarget).data("id");
-            var modelToDelete = this.user.attributes.followingUser.get(id);
-            modelToDelete.url = 'https://umovie.herokuapp.com/follow/' + id;
-            modelToDelete.destroy({
-                success: function () {
-                    that.render();
-                    console.log("destroyed");
-                },
-                error: function (model, response) {
-                    if (response.status === 401) {
-                        window.location.href = "#/";
+            if (this.isCurrentUser == true) {
+                e.preventDefault();
+                var that = this;
+                var id = $(e.currentTarget).data("id");
+                var modelToDelete = this.user.attributes.followingUser.get(id);
+                modelToDelete.url = 'https://umovie.herokuapp.com/follow/' + id;
+                modelToDelete.destroy({
+                    success: function () {
+                        that.render();
+                        console.log("destroyed");
+                    },
+                    error: function (model, response) {
+                        if (response.status === 401) {
+                            window.location.href = "#/";
+                        }
+                        else {
+                            var errorPage = new ErrorPageView();
+                            errorPage.render(response.status);
+                        }
                     }
-                    else {
-                        var errorPage = new ErrorPageView();
-                        errorPage.render(response.status);
-                    }
-                }
-            });
+                });
+            }
         },
         deleteWatchlist: function (event) {
-            var watchListId = $(event.target).data('id');
-            var watchlistModel = this.watchlistUser.get(watchListId);
-            watchlistModel.destroy();
-            this.watchlistUser.remove();
+            if (this.isCurrentUser == true) {
+                var watchListId = $(event.target).data('id');
+                var watchlistModel = this.watchlistUser.get(watchListId);
+                watchlistModel.destroy();
+                this.watchlistUser.remove();
+            }
         },
-        followerShow: function (ev){
+        followerShow: function (event){
             var userId = $(event.target).data('id');
             window.location.href = "#/users/" + userId;
         },
@@ -151,6 +154,7 @@ define([
                 $(".deleteButtonFollow").hide();
                 $(".deleteButtonWatchlist").hide();
                 $("#pencilAvatar").hide();
+                $(".unfollow").hide();
             }
         },
         cleanView: function () {
