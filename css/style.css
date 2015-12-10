@@ -202,6 +202,10 @@ a:hover {
         display: none;
     }
 
+    #watchlistButton{
+        display: none;
+    }
+
     #navbarRight {
         display: none;
     }
