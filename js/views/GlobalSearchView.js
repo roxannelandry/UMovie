@@ -242,7 +242,6 @@ define([
         },
 
         filterResult : function(){
-            debugger;
             checkedGenre = [];
             $('.genreCheckbox:checked').each(function(){
                 checkedGenre.push($(this).val());
