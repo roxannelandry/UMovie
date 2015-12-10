@@ -28,155 +28,131 @@
 <div>
     <table id="listWatchlist" class="borderSepared tableWatchlist linkUnderline">
         <% var count = 0;
+        _.each(searchAll, function(result) {
+        if (count >= 10){
+            if (count %2 == 0){%>
+            <tr data-id='<%=result.trackId%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>"
+                style="display: none">
+                <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist" href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a></td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <%if(result.isMovie){%>
+                        <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
+                                data-toggle="dropdown">+
+                        </button>
+                        <ul class="dropdown-menu blackBackgound " role="menu">
+                            <%_.each(watchlists, function(watchlist) {%>
+                            <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
+                            <% });%>
+                        </ul>
+                        <%};%>
+                    </div>
+                </td>
+            </tr>
+            <%}else {%>
+            <tr data-id='<%=result.trackId%>' id="<%=count%>" class="lineTableWatchlist" style="display: none">
+                <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
+                                                                      href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
+                </td>
 
-        _.each(searchAll, function(result) {%>
+                <td>
+                    <div class="btn-group pull-right">
+                        <%if(result.isMovie){%>
 
+                        <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
+                                data-toggle="dropdown">+
+                        </button>
 
-        <%if (count >= 10){%>
-        <%if (count %2 == 0){%>
-
-        <tr data-id='<%=result.trackId%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>"
-            style="display: none">
-            <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
-                                                                  href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
-            </td>
-            <td>
-                <div class="btn-group pull-right">
-                    <%if(result.isMovie){%>
-                    <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
-                            data-toggle="dropdown">+
-                    </button>
-
-                    <ul class="dropdown-menu blackBackgound " role="menu">
-                        <%_.each(watchlists, function(watchlist) {%>
-                        <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
-                        <% });%>
-                    </ul>
-                    <%};%>
-                </div>
-            </td>
-        </tr>
+                        <ul class="dropdown-menu blackBackgound " role="menu">
+                            <%_.each(watchlists, function(watchlist) {%>
+                            <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
+                            <% });%>
+                        </ul>
+                        <%};%>
+                    </div>
+                </td>
+            </tr>
+            <%};
+        }else if (count %2 ==0){%>
+            <tr data-id='<%=result.trackId%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>">
+                <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist" href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a></td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <%if(result.isMovie){%>
+                        <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch" data-toggle="dropdown">+</button>
+                        <ul class="dropdown-menu blackBackgound " role="menu">
+                            <%_.each(watchlists, function(watchlist) {%>
+                            <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
+                            <%});%>
+                        </ul>
+                        <%};%>
+                    </div>
+                </td>
+            </tr>
         <%}else {%>
-        <tr data-id='<%=result.trackId%>' id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
-                                                                  href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
-            </td>
+            <tr data-id='<%=result.trackId%>' class="lineTableWatchlist" id="<%=count%>">
+                <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
+                                                                      href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
+                </td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <%if(result.isMovie){%>
+                        <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
+                                data-toggle="dropdown">+
+                        </button>
 
-            <td>
-                <div class="btn-group pull-right">
-                    <%if(result.isMovie){%>
-
-                    <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
-                            data-toggle="dropdown">+
-                    </button>
-
-                    <ul class="dropdown-menu blackBackgound " role="menu">
-                        <%_.each(watchlists, function(watchlist) {%>
-                        <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
-                        <% });%>
-                    </ul>
-                    <%};%>
-                </div>
-            </td>
-        </tr>
-        <%};
-        }else
-        if (count %2 ==0){%>
-        <tr data-id='<%=result.trackId%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
-                                                                  href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
-            </td>
-            <td>
-                <div class="btn-group pull-right">
-                    <%if(result.isMovie){%>
-
-                    <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
-                            data-toggle="dropdown">+
-                    </button>
-
-                    <ul class="dropdown-menu blackBackgound " role="menu">
-                        <%_.each(watchlists, function(watchlist) {%>
-                        <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
-                        <% });%>
-                    </ul>
-                    <%};%>
-                </div>
-            </td>
-        </tr>
-        <%}else {%>
-        <tr data-id='<%=result.trackId%>' class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="<%=result.icone%>"><a class="watchlistName lineTableWatchlist"
-                                                                  href="<%=result.type%><%=result.trackId%>"><%=result.trackName%></a>
-            </td>
-            <td>
-                <div class="btn-group pull-right">
-                    <%if(result.isMovie){%>
-                    <button type="button" class="btn btn-default dropdown-toggle buttonAddWatchlistSearch"
-                            data-toggle="dropdown">+
-                    </button>
-
-                    <ul class="dropdown-menu blackBackgound " role="menu">
-                        <%_.each(watchlists, function(watchlist) {%>
-                        <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
-                        <% });%>
-                    </ul>
-                    <%};%>
-                </div>
-            </td>
-        </tr>
-        <%};
-        count ++
-        });%>
-
+                        <ul class="dropdown-menu blackBackgound " role="menu">
+                            <%_.each(watchlists, function(watchlist) {%>
+                            <li data-id="<%=watchlist.id%>"><a tabindex="-1" href="#"> <%=watchlist.name%></a></li>
+                            <% });%>
+                        </ul>
+                        <%};%>
+                    </div>
+                </td>
+            </tr>
+        <%}; count ++ });%>
         <% var count = 0;
-        _.each(searchUser, function(result) {%>
-        <%if (count >= 10){%>
-        <%if (count %2 == 0){%>
-
-        <tr data-id='<%=result.id%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
-                                                                       href="#/users/<%=result.id%>"><%=result.name%></a>
-            </td>
-            <td>
-            <td>
-                <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
-            </td>
-        </tr>
-        <%}else {%>
-        <tr data-id='<%=result.id%>' id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
-                                                                        href="#/users/<%=result.id%>"><%=result.name%></a>
-            </td>
-            <td>
-            <td>
-                <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
-            </td>
-        </tr>
-        <%};
-        }else
-        if (count %2 ==0){%>
-        <tr data-id='<%=result.id%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
-                                                                       href="#/users/<%=result.id%>"><%=result.name%></a>
-            </td>
-            <td>
-                <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
-            </td>
-        </tr>
-        <%}else {%>
-        <tr data-id='<%=result.id%>' class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
-                                                                       href="#/users/<%=result.id%>"><%=result.name%></a>
-            </td>
-            <td>
-                <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
-            </td>
-        </tr>
-        <%};
-        count ++
-        });%>
-
-
+        _.each(searchUser, function(result) {
+            if (count >= 10){
+                if (count %2 == 0){%>
+                <tr data-id='<%=result.id%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
+                    <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+                                                                               href="#/users/<%=result.id%>"><%=result.name%></a>
+                    </td>
+                    <td>
+                    <td>
+                        <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
+                    </td>
+                </tr>
+                <%}else {%>
+                <tr data-id='<%=result.id%>' id="<%=count%>" class="lineTableWatchlist" style="display: none">
+                    <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+                                                                                href="#/users/<%=result.id%>"><%=result.name%></a>
+                    </td>
+                    <td>
+                    <td>
+                        <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
+                    </td>
+                </tr>
+            <%}; }else if (count %2 ==0){%>
+            <tr data-id='<%=result.id%>' class="bigestOpacity lineTableWatchlist" id="<%=count%>">
+                <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+                                                                           href="#/users/<%=result.id%>"><%=result.name%></a>
+                </td>
+                <td>
+                    <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
+                </td>
+            </tr>
+            <%}else {%>
+            <tr data-id='<%=result.id%>' class="lineTableWatchlist" id="<%=count%>">
+                <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+                                                                           href="#/users/<%=result.id%>"><%=result.name%></a>
+                </td>
+                <td>
+                    <button class="btn followButton btn-primary gradient pull-right" data-id="<%=result.id%>">Follow</button>
+                </td>
+            </tr>
+        <%}; count ++ });%>
     </table>
     <div><img class="imageBullet" src="./imgs/Plusbullet.png" onclick="AddMovieRow(<%=count%>)"/></div>
 
