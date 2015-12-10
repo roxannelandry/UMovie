@@ -5,7 +5,9 @@
         <%if(Movies !== null){%>
         <% _.each(Movies, function(movie) {%>
         <div class="containerMovieDeleteButton">
-            <img class="imgMovieWatchlist" src="<%= movie.artworkUrl100 %>"/>
+            <div class="containerMovieWatchlist" data-id="<%=movie.trackId%>">
+                <img class="imgMovieWatchlist"  src="<%= movie.artworkUrl100 %>"/>
+            </div>
         </div>
         <% }); %>
         <input id="watchlistId" type="hidden" name="id" value="<%= Watchlist.id %>"/>

@@ -106,6 +106,7 @@ define([
             }
         },
         deleteFollow: function (e) {
+            debugger;
             e.preventDefault();
             var that = this;
             var id = $(e.currentTarget).data("id");
