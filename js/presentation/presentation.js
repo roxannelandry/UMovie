@@ -92,6 +92,7 @@ function setType(liste) {
         } else if (liste[i].kind !== undefined) {
             liste[i].icone = "./imgs/Movies-icon.png";
             liste[i].type = '#/movies/';
+            liste[i].isMovie = true;
         }else{
             delete liste[i];
         }
