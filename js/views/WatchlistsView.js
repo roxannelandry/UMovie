@@ -52,17 +52,15 @@ define([
 
         },
         addWatchlist: function () {
+            var that = this;
             var nameInput = $(".buttonInputWatchList").val();
             if (inputIsValidWatchlist(nameInput)) {
-                debugger;
                 if(this.watchLists.models[0] !== undefined){
                     _.each(this.watchLists.models, function (watchlist){
                         if(watchlist.attributes.name == nameInput){
-                            debugger;
                             $('#errorDivEmptyWatchlist').html(" This watchlist name already exist.").fadeIn('fast').delay(3000).fadeOut('slow');
                         }else{
-                            debugger;
-                            this.watchLists.create({
+                            that.watchLists.create({
                                 name: nameInput
                             });
                         }
