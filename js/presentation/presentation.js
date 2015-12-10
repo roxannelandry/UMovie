@@ -49,7 +49,6 @@ function signUpInformationValid(name){
 
 
 function loginInformationValid(name){
-    debugger;
     if (!name) {
         $('#errorLogin').html(" Some login information are empty? That's sad!").fadeIn('fast').delay(5000).fadeOut('slow');
         return false;

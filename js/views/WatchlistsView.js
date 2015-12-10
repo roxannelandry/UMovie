@@ -58,7 +58,6 @@ define([
             if (inputIsValidWatchlist(nameInput)) {
                 if(this.watchLists.models[0] !== undefined){
                     _.each(this.watchLists.models, function (watchlist){
-                        debugger;
                         if(watchlist.attributes.name == nameInput) {
                             isPresent = true;
                         }

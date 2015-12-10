@@ -203,6 +203,26 @@ define([
             }
         },
         addToWatchlist: function (e) {
+
+            e.preventDefault();
+            var that = this;
+            var isDuplicate = false;
+            var id = $(e.currentTarget).data("id");
+            var watchlistToAdd = this.watchlists.get(id);
+            var movieToAdd = this.movie.attributes;
+            watchlistToAdd.attributes.moviesWatchList.models.forEach(function(movie){
+                if (movie !== undefined) {
+                    if (movie.trackId == that.movie.attributes.trackId || movie.attributes.trackId == that.movie.attributes.trackId) {
+                        isDuplicate = true;
+                        $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
+                    }
+                }
+            });
+            watchlistToAdd.attributes.moviesWatchList.models.push(movieToAdd);
+            if (isDuplicate == false) {
+                watchlistToAdd.addMovie(movieToAdd);
+            }
+
             e.preventDefault();
             var that = this;
             var isDuplicate = false;
@@ -212,7 +232,8 @@ define([
             var movieToAdd = findMovie(this.searchAll.attributes, movieId);
             watchlistToAdd.attributes.moviesWatchList.models.forEach(function(movie){
                 if (movie !== undefined) {
-                    if (movie.trackId == movieToAdd.trackId || movie.attributes.trackId == movieToAdd.trackId) {
+                    debugger;
+                    if (movie.trackId == that.movie.attributes.trackId || movie.attributes.trackId == that.movie.attributes.trackId) {
                         isDuplicate = true;
                         $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
                     }
