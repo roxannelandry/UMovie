@@ -22,7 +22,7 @@
     <td><input class="genreCheckbox" type="checkbox" name="gender" value="<%=gender.name%>"/> <%=gender.name%></td>
     <%});%>
     <div id="buttonContainer">
-    <button class="filterButton btn btn-default">Filter</button>
+        <button class="filterButton btn btn-default">Filter</button>
     </div>
 </div>
 <div>
@@ -34,8 +34,8 @@
         <%if (count >= 10){%>
         <%if (count %2 == 0){%>
 
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/users/<%=result.id%>"><%=result.name%></a>
             </td>
             <td>
@@ -44,8 +44,8 @@
             </td>
         </tr>
         <%}else {%>
-        <tr id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/users/<%=result.id%>"><%=result.name%></a>
             </td>
             <td>
@@ -56,8 +56,8 @@
         <%};
         }else
         if (count %2 ==0){%>
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/users/<%=result.id%>"><%=result.name%></a>
             </td>
             <td>
@@ -66,8 +66,8 @@
             </td>
         </tr>
         <%}else {%>
-        <tr class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/users/<%=result.id%>"><%=result.name%></a>
             </td>
             <td>
@@ -86,8 +86,8 @@
         <%if (count >= 10){%>
         <%if (count %2 == 0){%>
 
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
-            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName"
                                                                        href="#/movies/<%=result.trackId%>"><%=result.trackName%></a>
             </td>
             <td>
@@ -100,8 +100,8 @@
             </td>
         </tr>
         <%}else {%>
-        <tr id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>"  style="display: none">
+            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName"
                                                                        data-id="<%=result.trackId%>"
                                                                        href="#/movies/<%=result.trackId%>"><%=result.trackName%></a>
             </td>
@@ -122,8 +122,8 @@
         <%};
         }else
         if (count %2 ==0){%>
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName"
                                                                        href="#/movies/<%=result.trackId%>"><%=result.trackName%></a>
             </td>
             <td>
@@ -141,8 +141,8 @@
             </td>
         </tr>
         <%}else {%>
-        <tr class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Movies-icon.png"><a class="watchlistName"
                                                                        href="#/movies/<%=result.trackId%>"><%=result.trackName%></a>
             </td>
             <td>
@@ -168,28 +168,28 @@
         <%if (count >= 10){%>
         <%if (count %2 == 0){%>
 
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
-            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName"
                                                                         href="#/tvshow/<%=result.collectionId%>"><%=result.collectionName%></a>
             </td>
         </tr>
         <%}else {%>
-        <tr id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName"
                                                                         href="#/tvshow/<%=result.collectionId%>"><%=result.collectionName%></a>
             </td>
         </tr>
         <%};
         }else
         if (count %2 ==0){%>
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName"
                                                                         href="#/tvshow/<%=result.collectionId%>"><%=result.collectionName%></a>
             </td>
         </tr>
         <%}else {%>
-        <tr class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Tv-Show-icon.png"><a class="watchlistName"
                                                                         href="#/tvshow/<%=result.collectionId%>"><%=result.collectionName%></a>
             </td>
         </tr>
@@ -203,28 +203,28 @@
         <%if (count >= 10){%>
         <%if (count %2 == 0){%>
 
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/actor/<%=result.artistId%>"><%=result.artistName%></a>
             </td>
         </tr>
         <%}else {%>
-        <tr id="<%=count%>" class="lineTableWatchlist" style="display: none">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>" style="display: none">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/actor/<%=result.artistId%>"><%=result.artistName%></a>
             </td>
         </tr>
         <%};
         }else
         if (count %2 ==0){%>
-        <tr class="bigestOpacity lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/actor/<%=result.artistId%>"><%=result.artistName%></a>
             </td>
         </tr>
         <%}else {%>
-        <tr class="lineTableWatchlist" id="<%=count%>">
-            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName lineTableWatchlist"
+        <tr id="<%=count%>">
+            <td><img class="imageLine" src="./imgs/Person-icon.png"><a class="watchlistName"
                                                                        href="#/actor/<%=result.artistId%>"><%=result.artistName%></a>
             </td>
         </tr>

@@ -69,7 +69,6 @@ function goToRechercheURL(e) {
 }
 
 function findMovie(liste, movieId) {
-    debugger;
     var x;
     for (x in liste) {
         if (liste[x].trackId === movieId) {
@@ -116,6 +115,5 @@ function filterListe(liste,genre){
 }
 
 function hideMenu(){
-    debugger;
     $('#navbarSmall').hide();
 }

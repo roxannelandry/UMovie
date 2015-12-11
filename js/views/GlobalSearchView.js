@@ -190,10 +190,8 @@ define([
             var stripped = choosedSearchOption.replace("-", "");
             var strippedToLower = stripped.toLowerCase();
             var dropDownChoice;
-            if (strippedToLower === "tvshows seasons") {
+            if (strippedToLower === "tvshows") {
                 dropDownChoice = "/tvshows/seasons";
-            } else if (strippedToLower === "tvshows episodes") {
-                dropDownChoice = "/tvshows/episodes";
             } else {
                 dropDownChoice = "/" + strippedToLower;
             }

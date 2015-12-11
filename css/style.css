@@ -309,6 +309,12 @@ ul.dropdown-menu {
     opacity: 0.9;
 }
 
+.bigestOpacitySearch {
+    background-color: #191919;
+    opacity: 0.6;
+}
+
+
 .linkUnderline {
     text-decoration: underline;
 }
@@ -481,7 +487,6 @@ div.containerTvShowImg {
 table {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 3%;
 }
 
 table.borderSepared {
@@ -491,8 +496,6 @@ table.borderSepared {
 
 th, td {
     text-align: left;
-    background-color: #313131;
-    opacity: 0.7;
     color: whitesmoke;
     font-size: 11pt;
 }
@@ -713,7 +716,7 @@ ul.widthRelative li a {
     overflow-x: hidden;
     font-size: 11pt;
     padding-left: 4px;
-    max-width: 285px;
+    max-width: 281px;
     color: #ababab;
     list-style-type: none;
     cursor: pointer;
