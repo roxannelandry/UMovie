@@ -8,7 +8,9 @@
         <%if(Movies !== null){%>
         <% _.each(Movies, function(movie) {%>
         <div class="containerMovieDeleteButton">
-            <img class="imgMovieWatchlist" src="<%= movie.artworkUrl100 %>"/>
+            <a href="#/movies/<%=movie.trackId%>">
+                <img class="imgMovieWatchlist" src="<%= movie.artworkUrl100 %>"/>
+            </a>
             <span class="deleteCaption"><a class="glyphicon glyphicon-remove deleteButtonMovies spaceDeleteButton"
                                            data-id="<%= movie.trackId%>">Delete</a></span>
         </div>

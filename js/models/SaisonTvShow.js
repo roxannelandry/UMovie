@@ -18,6 +18,7 @@ define([
             model.primaryGenreName = response.results[0].primaryGenreName;
             model.releaseDate = response.results[0].releaseDate.substr(0, 10);
             model.longDescription = response.results[0].longDescription;
+            model.collectionViewUrl = response.results[0].collectionViewUrl;
             return model;
         }
     });

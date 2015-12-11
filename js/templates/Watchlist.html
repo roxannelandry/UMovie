@@ -1,11 +1,14 @@
 <div id="otherUser">
     <div id="errorDivEmptyWatchlist" class="glyphicon glyphicon-remove-sign"></div>
-    <h1><%= Watchlist.name%>"</h1>
+    <h1 id="watchlistTitle"><%= Watchlist.name%>"</h1>
     <div id="moviesContainerWatchlist">
         <%if(Movies !== null){%>
         <% _.each(Movies, function(movie) {%>
+
         <div class="containerMovieDeleteButton">
-            <img class="imgMovieWatchlist" src="<%= movie.artworkUrl100 %>"/>
+                <a href="#/movies/<%=movie.trackId%>">
+                    <img  class="imgMovieWatchlist"  src="<%= movie.artworkUrl100 %>"/>
+                </a>
         </div>
         <% }); %>
         <input id="watchlistId" type="hidden" name="id" value="<%= Watchlist.id %>"/>

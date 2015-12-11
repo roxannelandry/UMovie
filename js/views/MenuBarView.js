@@ -24,9 +24,7 @@ define([
         events: {
             'click #userName': 'showUser',
             'click .buttonLogOut': 'logOut',
-            'click .buttonAbout': 'showHelp',
-            'click #avatarIconSmall': 'chooseAvatar',
-            'click #avatarIcon': 'chooseAvatar'
+            'click .buttonAbout': 'showHelp'
         },
         initialize: function () {
             var currentUserId = Session.get('user_id');

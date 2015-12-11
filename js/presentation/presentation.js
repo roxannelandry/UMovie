@@ -39,6 +39,23 @@ function inputIsValidSearch(input) {
     return true;
 }
 
+function signUpInformationValid(name){
+    if (!name) {
+        $('#errorSignUp').html(" Some login information are empty? That's sad!").fadeIn('fast').delay(5000).fadeOut('slow');
+        return false;
+    }
+    return true;
+}
+
+
+function loginInformationValid(name){
+    if (!name) {
+        $('#errorLogin').html(" Some login information are empty? That's sad!").fadeIn('fast').delay(5000).fadeOut('slow');
+        return false;
+    }
+    return true;
+}
+
 function goToRechercheURL(e) {
     if (e.keyCode == 13) {
         var queryString = $("#inputSearch").val();
@@ -53,31 +70,28 @@ function goToRechercheURL(e) {
 
 function findMovie(liste, movieId) {
     var x;
-    var i = 0;
     for (x in liste) {
-        if (liste[i].trackId === movieId) {
-            return liste[i];
+        if (liste[x].trackId === movieId) {
+            return liste[x];
         }
-        i++;
     }
 }
 
 function setType(liste) {
     var x;
-    var i = 0;
     for (x in liste) {
-        if (liste[i].collectionType !== undefined) {
-            liste[i].icone = "./imgs/Tv-Show-icon.png";
-            liste[i].trackId = liste[i].collectionId;
-            liste[i].trackName = liste[i].collectionName;
-            liste[i].type = '#/tvshow/';
-        } else if (liste[i].kind !== undefined) {
-            liste[i].icone = "./imgs/Movies-icon.png";
-            liste[i].type = '#/movies/';
+        if (liste[x].collectionType !== undefined) {
+            liste[x].icone = "./imgs/Tv-Show-icon.png";
+            liste[x].trackId = liste[x].collectionId;
+            liste[x].trackName = liste[x].collectionName;
+            liste[x].type = '#/tvshow/';
+        } else if (liste[x].kind !== undefined) {
+            liste[x].icone = "./imgs/Movies-icon.png";
+            liste[x].type = '#/movies/';
+            liste[x].isMovie = true;
         }else{
-            delete liste[i];
+            delete liste[x];
         }
-        i++;
     }
 }
 
@@ -100,3 +114,6 @@ function filterListe(liste,genre){
     }
 }
 
+function hideMenu(){
+    $('#navbarSmall').hide();
+}

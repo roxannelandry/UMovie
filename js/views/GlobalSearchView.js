@@ -190,10 +190,8 @@ define([
             var stripped = choosedSearchOption.replace("-", "");
             var strippedToLower = stripped.toLowerCase();
             var dropDownChoice;
-            if (strippedToLower === "tvshows seasons") {
+            if (strippedToLower === "tvshows") {
                 dropDownChoice = "/tvshows/seasons";
-            } else if (strippedToLower === "tvshows episodes") {
-                dropDownChoice = "/tvshows/episodes";
             } else {
                 dropDownChoice = "/" + strippedToLower;
             }
@@ -212,7 +210,7 @@ define([
             var movieToAdd = findMovie(this.searchAll.attributes, movieId);
             watchlistToAdd.attributes.moviesWatchList.models.forEach(function(movie){
                 if (movie !== undefined) {
-                    if (movie.trackId == movieToAdd.trackId || movie.attributes.trackId == movieToAdd.trackId) {
+                    if (movie.trackId == that.movie.attributes.trackId || movie.attributes.trackId == that.movie.attributes.trackId) {
                         isDuplicate = true;
                         $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
                     }
@@ -242,7 +240,6 @@ define([
         },
 
         filterResult : function(){
-            debugger;
             checkedGenre = [];
             $('.genreCheckbox:checked').each(function(){
                 checkedGenre.push($(this).val());

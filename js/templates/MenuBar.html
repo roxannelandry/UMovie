@@ -40,7 +40,7 @@
                         </div>
                     </ul>
                 </li>
-                <li><a href="#/watchlists">
+                <li id="watchlistButton"><a href="#/watchlists">
                     <small>Watchlists</small>
                 </a></li>
             </ul>
@@ -67,16 +67,13 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="navbarSmall">
-                <li class="marginUserSmall"><img id="avatarIconSmall" src="<%=avatarIcon%>"><a
+                <li class="marginUserSmall"><img id="avatarIconSmall" src="<%=avatarIcon%>"><a data-toggle="collapse" data-target=".navbar-collapse"
                         href="#/users/<%=User.id%>"> <%= User.name %> </a></li>
-                <li><a class="buttonLogOut">Log out</a></li>
-                <li><a class="buttonAbout">About</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" class="buttonLogOut">Log out</a></li>
                 <% var queryString = "1zzzzzz1";%>
-                <li><a href="#/search?q=<%=queryString%>&limit=15">Search</a></li>
-                <li><a href="#/watchlists">Watchlist</a></li>
-                <li><a href="#/tvshow/766693163">Tv Shows</a></li>
-                <li><a href="#/movies/285825306">Movies</a></li>
-                <li><a href="#/actor/272994458">Actors</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/watchlists">Watchlist</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/search?q=<%=queryString%>&limit=15">Search</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" class="buttonAbout">About</a></li>
             </ul>
         </div>
     </div>

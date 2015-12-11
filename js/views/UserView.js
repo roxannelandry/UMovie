@@ -11,10 +11,9 @@ define([
     'collections/Watchlists',
     'views/ErrorPageView',
     'models/Session',
-    'views/ModalAvatarView',
     'text!templates/User.html'
 
-], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session, ModalAvatarView, UserTemplate) {
+], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session,UserTemplate) {
     var UserView = Backbone.View.extend({
         template: _.template(UserTemplate),
         el: $(".content"),
@@ -22,7 +21,8 @@ define([
             "click #pencilAvatar": "modifyAvatar",
             "click .unfollow": "deleteFollow",
             "click .deleteButtonWatchlist": "deleteWatchlist",
-            "click .followButton": "followUser"
+            "click .followButton": "followUser",
+            "click .followerShow": "followerShow"
         },
         initialize: function (options) {
             var that = this;
@@ -83,11 +83,7 @@ define([
                 that.render();
             });
         },
-        modifyAvatar: function () {
-            new ModalAvatarView().show();
-        },
         followUser: function () {
-            debugger;
             var that = this;
             var followExist = false;
             var id = {id: this.user.id};
@@ -106,32 +102,40 @@ define([
             }
         },
         deleteFollow: function (e) {
-            e.preventDefault();
-            var that = this;
-            var id = $(e.currentTarget).data("id");
-            var modelToDelete = this.user.attributes.followingUser.get(id);
-            modelToDelete.url = 'https://umovie.herokuapp.com/follow/' + id;
-            modelToDelete.destroy({
-                success: function () {
-                    that.render();
-                    console.log("destroyed");
-                },
-                error: function (model, response) {
-                    if (response.status === 401) {
-                        window.location.href = "#/";
+            if (this.isCurrentUser == true) {
+                e.preventDefault();
+                var that = this;
+                var id = $(e.currentTarget).data("id");
+                var modelToDelete = this.user.attributes.followingUser.get(id);
+                modelToDelete.url = 'https://umovie.herokuapp.com/follow/' + id;
+                modelToDelete.destroy({
+                    success: function () {
+                        that.render();
+                        console.log("destroyed");
+                    },
+                    error: function (model, response) {
+                        if (response.status === 401) {
+                            window.location.href = "#/";
+                        }
+                        else {
+                            var errorPage = new ErrorPageView();
+                            errorPage.render(response.status);
+                        }
                     }
-                    else {
-                        var errorPage = new ErrorPageView();
-                        errorPage.render(response.status);
-                    }
-                }
-            });
+                });
+            }
         },
         deleteWatchlist: function (event) {
-            var watchListId = $(event.target).data('id');
-            var watchlistModel = this.watchlistUser.get(watchListId);
-            watchlistModel.destroy();
-            this.watchlistUser.remove();
+            if (this.isCurrentUser == true) {
+                var watchListId = $(event.target).data('id');
+                var watchlistModel = this.watchlistUser.get(watchListId);
+                watchlistModel.destroy();
+                this.watchlistUser.remove();
+            }
+        },
+        followerShow: function (event){
+            var userId = $(event.target).data('id');
+            window.location.href = "#/users/" + userId;
         },
         render: function () {
             if (this.user.attributes.followingUser != null) {
@@ -150,6 +154,7 @@ define([
                 $(".deleteButtonFollow").hide();
                 $(".deleteButtonWatchlist").hide();
                 $("#pencilAvatar").hide();
+                $(".unfollow").hide();
             }
         },
         cleanView: function () {

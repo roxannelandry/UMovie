@@ -53,19 +53,20 @@ define([
         },
         addWatchlist: function () {
             var that = this;
+            var isPresent = false;
             var nameInput = $(".buttonInputWatchList").val();
             if (inputIsValidWatchlist(nameInput)) {
                 if(this.watchLists.models[0] !== undefined){
                     _.each(this.watchLists.models, function (watchlist){
-                        if(watchlist.attributes.name == nameInput){
-                            $('#errorDivEmptyWatchlist').html(" This watchlist name already exist.").fadeIn('fast').delay(3000).fadeOut('slow');
-                        }else{
-                            that.watchLists.create({
-                                name: nameInput
-                            });
+                        if(watchlist.attributes.name == nameInput) {
+                            isPresent = true;
                         }
                     });
-                }else{
+                }
+                if(isPresent == true){
+                    $('#errorDivEmptyWatchlist').html(" This watchlist name already exist.").fadeIn('fast').delay(3000).fadeOut('slow');
+                }
+                else {
                     this.watchLists.create({
                         name: nameInput
                     });
