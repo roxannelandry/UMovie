@@ -14,9 +14,10 @@ define([
     'jqueryUI',
     'models/Session',
     'libs/AvailableTags',
-    'text!templates/MenuBar.html'
+    'text!templates/MenuBar.html',
+    'models/Avatar'
 
-], function ($, _bootstrap, _, Backbone, GenresMovie, GenresTvShow, User, ErrorPageView, jqueryUI, Session, AvailableTags,  MenuBarTemplate) {
+], function ($, _bootstrap, _, Backbone, GenresMovie, GenresTvShow, User, ErrorPageView, jqueryUI, Session, AvailableTags,  MenuBarTemplate, Avatar) {
     var MenuBarView = Backbone.View.extend({
         template: _.template(MenuBarTemplate),
         el: $(".menuBar"),
@@ -87,6 +88,7 @@ define([
             });
 
         },
+        av: new Avatar(),
         logOut: function () {
             Session.logout();
         },
@@ -100,7 +102,8 @@ define([
             this.$el.html(this.template({
                 ListeGenreFilmInfo: this.genresMovie.toJSON(),
                 ListeGenreTvShowInfo: this.genresTvShow.toJSON(),
-                User: this.UserModel.toJSON()
+                User: this.UserModel.toJSON(),
+                avatarIcon: this.av.getUrlRoot()
             }));
             this.$('#inputSearch').autocomplete({
                 source: function(request, response) {

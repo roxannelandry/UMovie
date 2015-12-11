@@ -128,7 +128,7 @@ define([
         router.on('route:home', function () {
             if (Session.get("logged_in") === undefined) {
                 window.location.href = "#/";
-            } else{
+            } else {
                 $('.listeFilm').hide();
                 $('.menuBar').show();
                 router.cleanUp(router.lastview);
