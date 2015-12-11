@@ -709,9 +709,11 @@ ul.widthRelative li a {
 }
 
 .ui-autocomplete {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     font-size: 11pt;
+    padding-left: 4px;
+    max-width: 285px;
     color: #ababab;
     list-style-type: none;
     cursor: pointer;
@@ -719,6 +721,7 @@ ul.widthRelative li a {
     border: 1px solid #1f1f1f;
 
 }
+
 
 .input-group {
     margin: 3%;
@@ -1198,3 +1201,4 @@ a:hover {
     color: whitesmoke;
     margin-left: 4%;
 }
+
