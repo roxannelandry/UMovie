@@ -86,7 +86,7 @@ define([
             });
 
         },
-        av: new Avatar(),
+        avatar: new Avatar(),
         logOut: function () {
             Session.logout();
         },
@@ -101,7 +101,7 @@ define([
                 ListeGenreFilmInfo: this.genresMovie.toJSON(),
                 ListeGenreTvShowInfo: this.genresTvShow.toJSON(),
                 User: this.UserModel.toJSON(),
-                avatarIcon: this.av.getUrlRoot()
+                avatarIcon: this.avatar.getUrlRoot()
             }));
             this.$('#inputSearch').autocomplete({
                 source: function(request, response) {

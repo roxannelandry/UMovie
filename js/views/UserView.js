@@ -11,9 +11,10 @@ define([
     'collections/Watchlists',
     'views/ErrorPageView',
     'models/Session',
-    'text!templates/User.html'
+    'text!templates/User.html',
+    'models/Avatar'
 
-], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session,UserTemplate) {
+], function ($, _bootstrap, _, Backbone, User, Watchlists, ErrorPageView, Session,UserTemplate, Avatar) {
     var UserView = Backbone.View.extend({
         template: _.template(UserTemplate),
         el: $(".content"),
@@ -137,12 +138,14 @@ define([
             var userId = $(event.target).data('id');
             window.location.href = "#/users/" + userId;
         },
+        avatar: new Avatar(),
         render: function () {
             if (this.user.attributes.followingUser != null) {
                 this.$el.html(this.template({
                     User: this.user.toJSON(),
                     Followers: this.user.attributes.followingUser.models,
-                    WatchlistUser: this.watchlistUser.toJSON()
+                    WatchlistUser: this.watchlistUser.toJSON(),
+                    avatarIcon: this.avatar.getUrlRoot()
                 }));
             }
             if (this.isCurrentUser == true) {
