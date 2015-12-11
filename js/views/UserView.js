@@ -25,6 +25,8 @@ define([
             "click .followButton": "followUser",
             "click .followerShow": "followerShow"
         },
+        avatar: new Avatar(),
+        urlAvatar: '',
         initialize: function (options) {
             var that = this;
             var currentUser = Session.get('user_id');
@@ -32,11 +34,14 @@ define([
             this.isCurrentUser = false;
             if (options.id == currentUser) {
                 this.isCurrentUser = true;
+                this.urlAvatar = this.avatar.getUrlRoot();
             }
             this.user = new User({id: options.id});
+            var that = this;
+            that.urlAvatar = this.avatar.getUrlRoot();
             this.user.fetch({
-                success: function () {
-                    console.log('User fetched');
+                success: function (user, a) {
+                    that.urlAvatar = that.avatar.urlRoot + that.avatar.hashEmail(a.email);
                 },
                 error: function (model, response) {
                     if (response.status === 401) {
@@ -138,14 +143,14 @@ define([
             var userId = $(event.target).data('id');
             window.location.href = "#/users/" + userId;
         },
-        avatar: new Avatar(),
         render: function () {
+            console.log('print picture : ' + Session.get('email'));
             if (this.user.attributes.followingUser != null) {
                 this.$el.html(this.template({
                     User: this.user.toJSON(),
                     Followers: this.user.attributes.followingUser.models,
                     WatchlistUser: this.watchlistUser.toJSON(),
-                    avatarIcon: this.avatar.getUrlRoot()
+                    avatarIcon: this.urlAvatar
                 }));
             }
             if (this.isCurrentUser == true) {

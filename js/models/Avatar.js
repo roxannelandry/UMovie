@@ -32,10 +32,13 @@ m(c,d,g,i,b[f+(3*a+5)%16],4,h[a]),i=m(i,c,d,g,b[f+(3*a+8)%16],11,h[a+1]),g=m(g,i
             var model = [];
             return model;
         },
+        hashEmail: function (email) {
+            return CryptoJS.MD5(email);
+        },
         refresh: function() {
             var cookie = new Cookie();
             var email = decodeURIComponent(cookie.getCookie('email'));
-            var emailHash = CryptoJS.MD5(email);
+            var emailHash = this.hashEmail(email);
             this.url = this.urlRoot + emailHash;
         },
         getUrlRoot: function() {
