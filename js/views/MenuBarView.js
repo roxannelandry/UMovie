@@ -88,6 +88,14 @@ define([
         },
         avatar: new Avatar(),
         logOut: function () {
+            var date = new Date();
+            date.setTime(date.getTime());
+            $.cookie('remember', '', {expires: date});
+            $.cookie('logged_in', '', {expires: date});
+            $.cookie('user_id', '', {expires: date});
+            $.cookie('username', '', {expires: date});
+            $.cookie('email', '', {expires: date});
+            $.cookie('token', '', {expires: date});
             Session.logout();
         },
         showUser: function () {

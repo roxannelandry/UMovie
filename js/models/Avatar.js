@@ -23,20 +23,24 @@ m(c,d,g,i,b[f+(3*a+5)%16],4,h[a]),i=m(i,c,d,g,b[f+(3*a+8)%16],11,h[a+1]),g=m(g,i
 
 
     var Avatar = Backbone.Model.extend({
-	   urlRoot: 'http://www.gravatar.com/avatar/',
-	   initialize: function() {
-	    var cookie = new Cookie();
-	    var email = decodeURIComponent(cookie.getCookie('email'));
-        console.log('found mail ' + decodeURIComponent(email));
-	    var emailHash = CryptoJS.MD5(email);
-	    this.urlRoot += emailHash;
-	   },
+        urlRoot: 'http://www.gravatar.com/avatar/',
+        url: '',
+        initialize: function() {
+            this.refresh();
+        },
         parse: function (response) {
             var model = [];
             return model;
         },
+        refresh: function() {
+            var cookie = new Cookie();
+            var email = decodeURIComponent(cookie.getCookie('email'));
+            var emailHash = CryptoJS.MD5(email);
+            this.url = this.urlRoot + emailHash;
+        },
         getUrlRoot: function() {
-            return this.urlRoot;
+            this.refresh();
+            return this.url;
         }
     });
     return Avatar;
