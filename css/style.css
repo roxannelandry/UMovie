@@ -193,7 +193,7 @@ a:hover {
     margin-bottom: 3%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     #navbarSmall {
         display: block;
     }
@@ -216,7 +216,7 @@ a:hover {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 999px) {
     #avatarIconSmall {
         width: 0px;
         height: 0px;
@@ -1223,4 +1223,8 @@ table.defaultTableFormat td, th {
     opacity: 0.7;
     color: whitesmoke;
     font-size: 11pt;
+}
+
+.moreMarginRight{
+    margin-right: 5%;
 }

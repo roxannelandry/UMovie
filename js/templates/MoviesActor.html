@@ -9,14 +9,14 @@
             <td><img class="imageList" src='<%= info.artworkUrl100%>'><a class="linkUnderline"
                                                                          data-id="<%=info.trackId %>"><%=info.trackName%></a>
             </td>
-            <td class="pullright"><%= info.releaseDate.substr(0,10) %></td>
+            <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
         </tr>
         <%}else {%>
         <tr id="<%=count%>" style="display: none">
             <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
                                                                          data-id="<%=info.trackId %>"><%=info.trackName%></a>
             </td>
-            <td class="pullright"><%= info.releaseDate %></td>
+            <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
         </tr>
         <%};
         }else
@@ -25,14 +25,14 @@
             <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
                                                                          data-id="<%=info.trackId %>"><%=info.trackName%></a>
             </td>
-            <td class="pullright"><%= info.releaseDate %></td>
+            <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
         </tr>
         <%}else {%>
         <tr id="<%=count%>">
             <td><img class="imageList" src="<%= info.artworkUrl100%>"><a class="linkUnderline"
                                                                          data-id="<%=info.trackId %>"><%=info.trackName%></a>
             </td>
-            <td class="pullright"><%= info.releaseDate %></td>
+            <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
         </tr>
         <%};
         count ++

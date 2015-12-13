@@ -10,14 +10,14 @@
                 <td><img class="imageList" src="<%= info.artworkUrl100%>"><a data-id="<%= info.trackNumber %>"
                                                                              class="linkUnderline"><%=info.trackNumber%>.<%=
                     info.trackName%></a></td>
-                <td class="pullright"><%= info.releaseDate %></td>
+                <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
             </tr>
             <%}else {%>
             <tr id="<%=count%>" style="display: none">
                 <td><img class="imageList" src="<%= info.artworkUrl100%>"><a data-id="<%= info.trackNumber %>"
                                                                              class="linkUnderline"><%=info.trackNumber%>.<%=
                     info.trackName%></a></td>
-                <td class="pullright"><%= info.releaseDate %></td>
+                <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
             </tr>
             <%};
             }else
@@ -26,14 +26,14 @@
                 <td><img class="imageList" src="<%= info.artworkUrl100%>"><a data-id="<%= info.trackNumber %>"
                                                                              class="linkUnderline"><%=info.trackNumber%>.<%=
                     info.trackName%></a></td>
-                <td class="pullright"><%= info.releaseDate %></td>
+                <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
             </tr>
             <%}else {%>
             <tr id="<%=count%>">
                 <td><img class="imageList" src="<%= info.artworkUrl100%>"><a data-id="<%= info.trackNumber %>"
                                                                              class="linkUnderline"><%=info.trackNumber%>.<%=
                     info.trackName%></a></td>
-                <td class="pullright"><%= info.releaseDate %></td>
+                <td><p class="pull-right moreMarginRight"><%= info.releaseDate %></p></td>
             </tr>
             <%};
             count ++
