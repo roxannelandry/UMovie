@@ -31,7 +31,8 @@ define([
             "click #searchButton": "searchButtonClicked",
             "click .blackBackgound li": "addToWatchlist",
             "click #advancedSearch": "showAdvanced",
-            'click .filterButton': 'filterResult'
+            "click .filterButton": "filterResult",
+            "keydown": "searchButtonClicked"
         },
         initialize: function (options1, options2) {
             var currentUserId = $.cookie('user_id');
@@ -173,7 +174,6 @@ define([
             var isDuplicate = false;
             var watchlistId = $(e.currentTarget).data("id");
             var watchlistToAdd = this.watchlists.get(watchlistId);
-            debugger;
             var movieId = $(e.currentTarget.parentElement.parentElement).data("id");
             var movieToAdd = findMovie(this.specificSearchResult.attributes, movieId);
             watchlistToAdd.attributes.moviesWatchList.models.forEach(function(movie){
@@ -194,20 +194,24 @@ define([
                 $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
             }
         },
-        searchButtonClicked: function () {
-            var choosedSearchOption = $(".dropdownSearch").val();
-            var whatToSearh = $("#nameSearch").val();
-            var stripped = choosedSearchOption.replace("-", "");
-            var strippedToLower = stripped.toLowerCase();
-            var dropDownChoice;
-            if (strippedToLower === "tvshows") {
-                dropDownChoice = "/tvshows/seasons";
-            } else {
-                dropDownChoice = "/" + strippedToLower;
-            }
-            var toSearchNoSpace = whatToSearh.replace(" ", "%20");
-            if (inputIsValidSearch(whatToSearh)) {
-                window.location.href = "#/search" + dropDownChoice + "?q=" + toSearchNoSpace + '&limit=15';
+        searchButtonClicked: function (ev) {
+            this.isUser = false;
+            var code = ev.keyCode || ev.which;
+            if(code == 13 || ev.type == "click") {
+                var choosedSearchOption = $(".dropdownSearch").val();
+                var whatToSearh = $("#nameSearch").val();
+                var stripped = choosedSearchOption.replace("-", "");
+                var strippedToLower = stripped.toLowerCase();
+                var dropDownChoice;
+                if (strippedToLower === "tvshows") {
+                    dropDownChoice = "/tvshows/seasons";
+                } else {
+                    dropDownChoice = "/" + strippedToLower;
+                }
+                var toSearchNoSpace = whatToSearh.replace(" ", "%20");
+                if (inputIsValidSearch(whatToSearh)) {
+                    window.location.href = "#/search" + dropDownChoice + "?q=" + toSearchNoSpace + '&limit=15';
+                }
             }
         },
         showAdvanced: function () {
@@ -245,7 +249,6 @@ define([
             }
         },
         render: function (isShow) {
-
             if(this.gender !== undefined){
                 this.$el.html(this.template({
                     type: this.specificSearchResult.type,
@@ -261,6 +264,9 @@ define([
                     Watchlists: this.watchlists.toJSON(),
                     genders: null
                 }));
+            }
+            if(this.specificSearchResult.type == "/users" || this.specificSearchResult.type == "/actors"){
+                $("#advancedSearch").hide();
             }
             if(isShow == true){
                 $('#boxGender').show();

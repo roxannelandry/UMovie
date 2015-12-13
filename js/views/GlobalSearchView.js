@@ -30,7 +30,8 @@ define([
             "click #searchButton": "searchButtonClicked",
             "click .blackBackgound li": "addToWatchlist",
             "click #advancedSearch": "showAdvanced",
-            'click .filterButton': 'filterResult'
+            "click .filterButton": "filterResult",
+            "keydown": "searchButtonClicked"
         },
         initialize: function (options) {
             var currentUserId = $.cookie('user_id');
@@ -184,20 +185,24 @@ define([
                 }
             });
         },
-        searchButtonClicked: function () {
-            var choosedSearchOption = $(".dropdownSearch").val();
-            var whatToSearh = $("#nameSearch").val();
-            var stripped = choosedSearchOption.replace("-", "");
-            var strippedToLower = stripped.toLowerCase();
-            var dropDownChoice;
-            if (strippedToLower === "tvshows") {
-                dropDownChoice = "/tvshows/seasons";
-            } else {
-                dropDownChoice = "/" + strippedToLower;
-            }
-            var toSearchNoSpace = whatToSearh.replace(" ", "%20");
-            if (inputIsValidSearch(whatToSearh)) {
-                window.location.href = "#/search" + dropDownChoice + "?q=" + toSearchNoSpace + '&limit=15';
+        searchButtonClicked: function (ev) {
+            this.isUser = false;
+            var code = ev.keyCode || ev.which;
+            if(code == 13 || ev.type == "click") {
+                var choosedSearchOption = $(".dropdownSearch").val();
+                var whatToSearh = $("#nameSearch").val();
+                var stripped = choosedSearchOption.replace("-", "");
+                var strippedToLower = stripped.toLowerCase();
+                var dropDownChoice;
+                if (strippedToLower === "tvshows") {
+                    dropDownChoice = "/tvshows/seasons";
+                } else {
+                    dropDownChoice = "/" + strippedToLower;
+                }
+                var toSearchNoSpace = whatToSearh.replace(" ", "%20");
+                if (inputIsValidSearch(whatToSearh)) {
+                    window.location.href = "#/search" + dropDownChoice + "?q=" + toSearchNoSpace + '&limit=15';
+                }
             }
         },
         addToWatchlist: function (e) {
