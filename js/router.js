@@ -55,13 +55,13 @@ define([
             'moviesbygenre/:id':'moviesbygenre',
             'search/:param1/seasons?q=:param2':'specificsearchseasons',
             'search/:param1/episodes?q=:param2':'specificsearchepisodes',
-            '*notFound': 'notfound',
+            '*notFound': 'notfound'
 
         },
         cleanUp:function(view){
             if(view && view.cleanView() ){
                 view = "";
-            };
+            }
         }
     });
 

@@ -3,7 +3,7 @@
     <h2 id="titleWatchlists">Watchlists</h2>
     <input type="text" class="buttonInputWatchList" id="nomAjoutWatchliste" placeholder="Watchlist name"/>
     <a class="btn btn-default  buttonNewWatchlist" role="button">Add Watchlist</a>
-    <table id="listWatchlist" class="borderSepared tableWatchlist linkUnderline">
+    <table id="listWatchlist" class="borderSepared tableWatchlist linkUnderline defaultTableFormat">
         <% var count = 0;
         _.each(Watchlists, function(watchlist) {%>
         <tr class="bigestOpacity lineTableWatchlist">

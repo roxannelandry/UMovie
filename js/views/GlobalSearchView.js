@@ -204,21 +204,26 @@ define([
             e.preventDefault();
             var that = this;
             var isDuplicate = false;
-            var id = $(e.currentTarget).data("id");
-            var watchlistToAdd = this.watchlists.get(id);
+            var watchlistId = $(e.currentTarget).data("id");
+            var watchlistToAdd = this.watchlists.get(watchlistId);
             var movieId = $(e.currentTarget.parentElement.parentElement.parentElement.parentElement).data("id");
             var movieToAdd = findMovie(this.searchAll.attributes, movieId);
             watchlistToAdd.attributes.moviesWatchList.models.forEach(function(movie){
-                if (movie !== undefined) {
-                    if (movie.trackId == that.movie.attributes.trackId || movie.attributes.trackId == that.movie.attributes.trackId) {
+                if (movie !== undefined && movie.attributes !== undefined) {
+                    if (movie.attributes.trackId == movieId) {
                         isDuplicate = true;
-                        $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
+                    }
+                } else{
+                    if (movie.trackId == movieId) {
+                        isDuplicate = true;
                     }
                 }
             });
+            watchlistToAdd.attributes.moviesWatchList.models.push(movieToAdd);
             if (isDuplicate == false) {
-                watchlistToAdd.attributes.moviesWatchList.models.push(movieToAdd);
                 watchlistToAdd.addMovie(movieToAdd);
+            }else {
+                $('#errorMovieInWatchlist').html(" This movie is already in that watchlist.").fadeIn('fast').delay(3000).fadeOut('slow');
             }
         },
         showAdvanced: function () {
@@ -257,7 +262,6 @@ define([
 
         },
         render: function (isShow) {
-
             if(this.gender !== undefined){
                 setType(this.searchAll.attributes);
                 this.$el.html(this.template({

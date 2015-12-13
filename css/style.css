@@ -1205,3 +1205,22 @@ a:hover {
     margin-left: 4%;
 }
 
+
+table.defaultTableFormat{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+table.defaultTableFormat.borderSepared {
+    border-collapse: separate;
+    border-spacing: 0px 3px;
+}
+
+table.defaultTableFormat td, th {
+    text-align: left;
+    background-color: #313131;
+    opacity: 0.7;
+    color: whitesmoke;
+    font-size: 11pt;
+}
